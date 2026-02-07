@@ -5,7 +5,7 @@ rm -rf dist && mkdir dist &&
 echo "Compiling..."
 javac   --module-path "$JAVAFX_PATH" \
         --add-modules javafx.controls,javafx.fxml  \
-        -d ./dist/ ./src/application/*.java
+        -d ./dist/ ./src/application/*.java ./src/gui/*.java
 echo "Creating some directories..."
 mkdir ./dist/gui/
 echo "Copying resources..."

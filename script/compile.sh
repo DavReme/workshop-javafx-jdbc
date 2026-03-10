@@ -13,13 +13,15 @@ rm -rf dist && mkdir dist &&
 echo "Compiling..."
 javac   --module-path "$JAVAFX_PATH" \
         --add-modules javafx.controls,javafx.fxml  \
-        -d ./dist/ ./src/application/*.java ./src/gui/*.java \
-        ./src/gui/util/*.java
+        -d ./dist/ ./src/**/**/*.java ./src/**/*.java 
+
+#        -d ./dist/ ./src/application/*.java ./src/gui/*.java \
+#        ./src/gui/util/*.java ./src/model
 
 #======================================== ORGANIZING ./DIST/ ========================================
 
-echo "Creating some directories..."
-mkdir ./dist/gui/
+#echo "Creating some directories..."
+#mkdir ./dist/gui/
 
 #======================================== COPYING RESOURCES TO DIRECTORIES ========================================
 

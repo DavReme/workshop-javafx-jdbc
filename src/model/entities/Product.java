@@ -2,16 +2,23 @@ package model.entities;
 
 import java.io.Serializable;
 
-public class Department implements Serializable {
+public class Product implements Serializable {
     private static final long serialVersionUID = 1L;
     private Integer id;
     private String name;
+    private Double price;
+    private Integer quantity;
 
-    public Department() {}
+    private Department department;
 
-    public Department(Integer id, String name) {
+    public Product() {}
+
+    public Product(Integer id, String name, Double price, Integer quantity, Department department) {
         this.id = id;
         this.name = name;
+        this.price = price;
+        this.quantity = quantity;
+        this.department = department;
     }
 
     public Integer getId() {
@@ -30,6 +37,30 @@ public class Department implements Serializable {
         this.name = name;
     }
 
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
+    public Integer getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
+    }
+
+    public Department getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
@@ -46,7 +77,7 @@ public class Department implements Serializable {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        Department other = (Department) obj;
+        Product other = (Product) obj;
         if (id == null) {
             if (other.id != null)
                 return false;
@@ -57,6 +88,7 @@ public class Department implements Serializable {
 
     @Override
     public String toString() {
-        return "Department [id=" + id + ", name=" + name + "]";
+        return "Product [id=" + id + ", name=" + name + ", price=" + price + ", quantity=" + quantity + ", department="
+                + department + "]";
     }
 }
